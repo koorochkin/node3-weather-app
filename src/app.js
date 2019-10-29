@@ -5,6 +5,7 @@ const express = require('express')
 
 const app = express()
 const publicDir = path.join(__dirname, '../public')
+const port = process.env.PORT || 3000
 
 app.use(express.static(publicDir))
 
@@ -45,8 +46,8 @@ app.get('/products', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up and listening at port 3000')
+app.listen(port, () => {
+    console.log('Server is up and listening at port ' + port)
 })
 
 //new change
