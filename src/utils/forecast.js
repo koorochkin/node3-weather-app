@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Wrong input data', undefined)
         } else {
-            const data = body.daily.data[0].summary + ' It is ' + body.currently.temperature + ' degrees outside, and ' + body.currently.precipProbability + ' chance of rain'
+            const data = body.daily.data[0].summary + ' It is ' + body.currently.temperature + ' degrees outside, and ' + body.currently.precipProbability + '% chance of rain. Wind speed is ' + body.currently.windSpeed
             callback(undefined, data)
         }
     })
